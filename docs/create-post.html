@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>My Blog | Create Post</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+
+	<link rel="icon" type="image/x-icon" href="./img/favicons/favicon.svg">
+	<link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.webp">
+</head>
+
+<body class="">
+	
+	<header class="header">
+    <div class="container">
+        <div class="header__row">
+            <div class="header__logo">
+                <a class="logo__link" href="./../index.html">MY BLOG</a>
+            </div>
+
+            <div class="header__btns">
+                <a class="btn " href="create-post.html">Добавить пост</a>
+                <a class="btn " href="login.html">Вход</a>
+                <a class="btn toggleDarkModeBtn" href="#!">🌘</a>
+            </div>
+
+            <!-- Mobile button open -->
+<button class="mobile-nav-btn">
+	<div class="mobile-nav-btn__icon">
+		<!-- Если используются разные кнопки для откр/закр -->
+		<!-- <img class="nav-img" src="./img/ui/menu_right.svg" alt="Menu button" > -->
+	</div>
+</button>
+        </div>
+    </div>
+</header>
+	
+	<!-- ======= Мобильная навигация  ============================ -->
+<div class="mobile-nav ">
+	<div class="nav__btn-set">
+		<a class="btn " href="create-post.html">Добавить пост</a>
+		<a class="btn " href="login.html">Вход</a>
+		<a class="btn toggleDarkModeBtn" href="#!">🌘</a>
+	</div>
+	
+</div>
+
+<!-- ======= Fade для мобильной навигации  =================== -->
+<div class="mobile-nav-fade"></div>
+	<main class="page-content">
+		<div class="container container-narrow">
+			<form action="" class="form">
+				<h2 class="form__title">Добавить запись</h2>
+
+				<label class="fieldset">
+					<span class="label">Название</span>
+					<input class="input" id="name">
+				</label>
+
+				<label class="fieldset">
+					<span class="label" for="pwd">Содержание</span>
+					<textarea class="textarea" name="" id=""></textarea>
+				</label>
+
+				<fieldset class="fieldset">
+					<span class="label" >Обложка</span>
+
+					<label class="fieldset fieldset--checkbox">
+						<input class="input input--checkbox" type="checkbox">
+						Удалить обложку
+					</label>
+					<input class="btn btn--secondary btn--file" type="file">
+				</fieldset>
+
+				<button class="btn btn--lg" type="reset">Опубликовать</button>
+			</form>
+		</div>
+	</main>
+	<footer class="footer">
+	<div class="container">
+		<div class="footer__copyright">© 2025 ВебКадеми</div>
+	</div>
+</footer>
+	<script src="./js/index.bundle.js"></script>
+    <!-- <script src="./js/main.min.js"></script> -->
+</body>
+
+</html>

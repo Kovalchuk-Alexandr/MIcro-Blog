@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>My Blog | Login</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+
+	<link rel="icon" type="image/x-icon" href="./img/favicons/favicon.svg">
+	<link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.webp">
+</head>
+
+<body class="">
+	<!-- @@include('blocks/nav.html') -->
+	@@include('blocks/header.html')
+	<!-- @@include('blocks/mobile-nav-btn.html') -->
+	@@include('blocks/mobile-nav.html')
+	<main class="page-content">
+		<div class="container container-narrow">
+			<form action="" class="form">
+				<h2 class="form__title">Вход</h2>
+
+				<label class="fieldset">
+					<span class="label" for="email">Email</span>
+					<input class="input" type="email" name="email" id="email">
+				</label>
+
+				<label class="fieldset">
+					<span class="label" for="pwd">Пароль</span>
+					<input class="input" type="password" name="pwd" id="pwd">
+				</label>
+
+				<button class="btn btn--lg" type="reset">Войти</button>
+			</form>
+		</div>
+	</main>
+	@@include('blocks/footer.html')
+	<script src="./js/index.bundle.js"></script>
+    <!-- <script src="./../js/main.min.js"></script> -->
+</body>
+
+</html>

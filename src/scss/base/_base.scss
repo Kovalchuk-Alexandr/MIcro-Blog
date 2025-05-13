@@ -1,0 +1,72 @@
+// @import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
+
+* {
+	// border: 1px solid lightgray;
+}
+
+html {
+	scroll-behavior: smooth;
+	background-color: rgb(39, 39, 39);
+}
+
+body {
+	position: relative;
+	background-color: var(--page-bg);
+	color: var(--text-color);
+	font-family: var(--font-main);
+
+	// чтобы фонт выглядел более тонким
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	// text-wrap: balance;
+}
+
+img {
+	display: block;
+}
+
+a {
+	color: var(--link-color);
+}
+
+.muted  {
+	color: var(--text-muted);
+}
+
+.container.time-plugin.show {
+	z-index: 99 !important;
+}
+
+code {
+	background-color: #e9f1f6;
+	padding: 0.2rem;
+	border-radius: 4px;
+}
+
+pre.code {
+	overflow-x: auto;
+	background-color: #e9f1f6;
+	padding: 1rem;
+	border-radius: 4px;
+}
+
+.page-content {padding: var(--page-content-paddings, 40px 0);}
+
+.ui-block {
+	border: 1px dashed #777;
+	background-color: inherit;
+	padding: 20px;
+	display: flex;
+	
+	gap: 20px;
+	
+	&.dark {background-color: #313131;}
+	
+	&--form {flex-direction: column;}
+	
+	&--page-bg {
+		flex-direction: column;
+		background-color: #e7f0f3;
+	}
+}

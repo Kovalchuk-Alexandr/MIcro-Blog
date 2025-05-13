@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>SVG stack preview | svg-sprite</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                color: #666;
+                background: #fafafa;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1em;
+                line-height: 1.4;
+            }
+
+            header {
+                display: block;
+                padding: 3em 3em 2em;
+                background-color: #fff;
+            }
+
+            header p {
+                margin: 2em 0 0;
+            }
+
+            section {
+                border-top: 1px solid #eee;
+                padding: 2em 3em 0;
+            }
+
+            section ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            section li {
+                display: inline-block;
+                background-color: #fff;
+                position: relative;
+                margin: 0 2em 2em 0;
+                vertical-align: top;
+                border: 1px solid #ccc;
+                padding: 1em 1em 3em;
+                cursor: default;
+            }
+
+            .icon-box {
+                margin: 0;
+                width: 144px;
+                height: 144px;
+                position: relative;
+                background: #ccc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cpath fill='%23fff' d='M6 0h6v6H6zM0 6h6v6H0z'/%3E%3C/svg%3E") top left repeat;
+                border: 1px solid #ccc;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            .icon {
+                display: inline-block;
+            }
+
+            h1 {
+                margin-top: 0;
+            }
+
+            h2 {
+                margin: 0;
+                padding: 0;
+                font-size: 1em;
+                font-weight: 400;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                position: absolute;
+                left: 1em;
+                right: 1em;
+                bottom: 1em;
+            }
+
+            footer {
+                display: block;
+                margin: 0;
+                padding: 0 3em 3em;
+            }
+
+            footer p {
+                margin: 0;
+                font-size: .7em;
+            }
+
+            footer a {
+                color: #0f7595;
+                margin-left: 0;
+            }
+        </style>
+
+<!--
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as stack SVGs, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+-->
+
+<style>
+ .svg-favicons--favicon-dims { width: 260px; height: 260px; }
+ .svg-footer--footer-logo-dims { width: 414px; height: 30px; }
+ .svg-logo-dims { width: 414px; height: 30px; }
+ .svg-svgicons--heart-dims { width: 24px; height: 25px; }
+ .svg-svgicons--heart-line-dims { width: 24px; height: 24px; }
+ .svg-svgicons--id-card-line-dims { width: 24px; height: 24px; }
+ .svg-svgicons--search-dims { width: 24px; height: 24px; }
+ .svg-svgicons--search-line-dims { width: 24px; height: 24px; }
+ .svg-svgicons--star-dims { width: 21px; height: 20px; }
+ .svg-svgicons--star-off-dims { width: 21px; height: 20px; }
+ .svg-svgicons--star-small-dims { width: 17px; height: 17px; }
+ .svg-svgicons--user-dims { width: 24px; height: 24px; }
+ .svg-svgicons--user-star-line-dims { width: 24px; height: 24px; }
+ .svg-svgicons--website-dims { width: 512px; height: 512px; }
+ .svg-ui--arrow_left-20-dims { width: 20px; height: 19.84px; }
+ .svg-ui--arrow_left-24-dims { width: 24px; height: 24px; }
+ .svg-ui--arrow_right-24-dims { width: 24px; height: 24px; }
+ .svg-ui--arrow_right-256-dims { width: 256px; height: 256px; }
+ .svg-ui--arrows_left-32-dims { width: 32px; height: 32px; }
+ .svg-ui--close_round-dims { width: 24px; height: 24px; }
+ .svg-ui--menu_right-dims { width: 24px; height: 24px; }
+ .svg-ui--ui-arrow-dims { width: 19px; height: 18px; }
+ .svg-ui--ui-arrow-down-dims { width: 20px; height: 20px; }
+ .svg-ui--ui-arrow-top-dims { width: 20px; height: 20px; }
+ .svg-ui--ui-arrow-top-right-dims { width: 18px; height: 19px; }
+ .svg-ui--ui-arrow-top-right-inverse-dims { width: 18px; height: 19px; }
+ .svg-ui--ui-link-icon-dims { width: 33px; height: 32px; }
+</style>
+
+<!--
+====================================================================================================
+-->
+
+    </head>
+    <body>
+        <header>
+            <h1>SVG stack preview</h1>
+            <p>This preview features an SVG stack. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+            <ul>
+                <li>Your browser has to <a href="https://caniuse.com/svg-fragment" target="_blank" rel="noopener noreferrer">support SVG fragment identifiers</a> for SVG stacks to work.</li>
+                <li>Support for SVG fragment identifiers hasn't always been that decent. For older browsers you will have to use some prolyfill like <a href="https://github.com/preciousforever/SVG-Stacker/blob/master/fixsvgstack.jquery.js" target="_blank" rel="noopener noreferrer">fixsvgstack.jquery.js</a>.</li>
+            </ul>
+        </header>
+        <section>
+
+<!--
+SVG stack
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) to reference certain portions of the
+external sprite. By default, all shapes inside the sprite are hidden by CSS. The `:target` pseudo
+selector is used to show the very shape that is referenced by the fragment identifier.
+-->
+
+            <ul>
+
+             <li title="favicons--favicon">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#favicons--favicon" class="svg-favicons--favicon-dims" alt="favicons--favicon">
+                    </div>
+                    <h2>favicons--favicon, </h2>
+                </li>
+             <li title="footer--footer-logo">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#footer--footer-logo" class="svg-footer--footer-logo-dims" alt="footer--footer-logo">
+                    </div>
+                    <h2>footer--footer-logo, </h2>
+                </li>
+             <li title="logo">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#logo" class="svg-logo-dims" alt="logo">
+                    </div>
+                    <h2>logo, </h2>
+                </li>
+             <li title="svgicons--heart">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#svgicons--heart" class="svg-svgicons--heart-dims" alt="svgicons--heart">
+                    </div>
+                    <h2>svgicons--heart, </h2>
+                </li>
+             <li title="svgicons--heart-line">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#svgicons--heart-line" class="svg-svgicons--heart-line-dims" alt="svgicons--heart-line">
+                    </div>
+                    <h2>svgicons--heart-line, </h2>
+                </li>
+             <li title="svgicons--id-card-line">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#svgicons--id-card-line" class="svg-svgicons--id-card-line-dims" alt="svgicons--id-card-line">
+                    </div>
+                    <h2>svgicons--id-card-line, </h2>
+                </li>
+             <li title="svgicons--search">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#svgicons--search" class="svg-svgicons--search-dims" alt="svgicons--search">
+                    </div>
+                    <h2>svgicons--search, </h2>
+                </li>
+             <li title="svgicons--search-line">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#svgicons--search-line" class="svg-svgicons--search-line-dims" alt="svgicons--search-line">
+                    </div>
+                    <h2>svgicons--search-line, </h2>
+                </li>
+             <li title="svgicons--star">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#svgicons--star" class="svg-svgicons--star-dims" alt="svgicons--star">
+                    </div>
+                    <h2>svgicons--star, </h2>
+                </li>
+             <li title="svgicons--star-off">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#svgicons--star-off" class="svg-svgicons--star-off-dims" alt="svgicons--star-off">
+                    </div>
+                    <h2>svgicons--star-off, </h2>
+                </li>
+             <li title="svgicons--star-small">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#svgicons--star-small" class="svg-svgicons--star-small-dims" alt="svgicons--star-small">
+                    </div>
+                    <h2>svgicons--star-small, </h2>
+                </li>
+             <li title="svgicons--user">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#svgicons--user" class="svg-svgicons--user-dims" alt="svgicons--user">
+                    </div>
+                    <h2>svgicons--user, </h2>
+                </li>
+             <li title="svgicons--user-star-line">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#svgicons--user-star-line" class="svg-svgicons--user-star-line-dims" alt="svgicons--user-star-line">
+                    </div>
+                    <h2>svgicons--user-star-line, </h2>
+                </li>
+             <li title="svgicons--website">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#svgicons--website" class="svg-svgicons--website-dims" alt="svgicons--website">
+                    </div>
+                    <h2>svgicons--website, </h2>
+                </li>
+             <li title="ui--arrow_left-20">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#ui--arrow_left-20" class="svg-ui--arrow_left-20-dims" alt="ui--arrow_left-20">
+                    </div>
+                    <h2>ui--arrow_left-20, </h2>
+                </li>
+             <li title="ui--arrow_left-24">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#ui--arrow_left-24" class="svg-ui--arrow_left-24-dims" alt="ui--arrow_left-24">
+                    </div>
+                    <h2>ui--arrow_left-24, </h2>
+                </li>
+             <li title="ui--arrow_right-24">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#ui--arrow_right-24" class="svg-ui--arrow_right-24-dims" alt="ui--arrow_right-24">
+                    </div>
+                    <h2>ui--arrow_right-24, </h2>
+                </li>
+             <li title="ui--arrow_right-256">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#ui--arrow_right-256" class="svg-ui--arrow_right-256-dims" alt="ui--arrow_right-256">
+                    </div>
+                    <h2>ui--arrow_right-256, </h2>
+                </li>
+             <li title="ui--arrows_left-32">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#ui--arrows_left-32" class="svg-ui--arrows_left-32-dims" alt="ui--arrows_left-32">
+                    </div>
+                    <h2>ui--arrows_left-32, </h2>
+                </li>
+             <li title="ui--close_round">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#ui--close_round" class="svg-ui--close_round-dims" alt="ui--close_round">
+                    </div>
+                    <h2>ui--close_round, </h2>
+                </li>
+             <li title="ui--menu_right">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#ui--menu_right" class="svg-ui--menu_right-dims" alt="ui--menu_right">
+                    </div>
+                    <h2>ui--menu_right, </h2>
+                </li>
+             <li title="ui--ui-arrow">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#ui--ui-arrow" class="svg-ui--ui-arrow-dims" alt="ui--ui-arrow">
+                    </div>
+                    <h2>ui--ui-arrow, </h2>
+                </li>
+             <li title="ui--ui-arrow-down">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#ui--ui-arrow-down" class="svg-ui--ui-arrow-down-dims" alt="ui--ui-arrow-down">
+                    </div>
+                    <h2>ui--ui-arrow-down, </h2>
+                </li>
+             <li title="ui--ui-arrow-top">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#ui--ui-arrow-top" class="svg-ui--ui-arrow-top-dims" alt="ui--ui-arrow-top">
+                    </div>
+                    <h2>ui--ui-arrow-top, </h2>
+                </li>
+             <li title="ui--ui-arrow-top-right">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#ui--ui-arrow-top-right" class="svg-ui--ui-arrow-top-right-dims" alt="ui--ui-arrow-top-right">
+                    </div>
+                    <h2>ui--ui-arrow-top-right, </h2>
+                </li>
+             <li title="ui--ui-arrow-top-right-inverse">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#ui--ui-arrow-top-right-inverse" class="svg-ui--ui-arrow-top-right-inverse-dims" alt="ui--ui-arrow-top-right-inverse">
+                    </div>
+                    <h2>ui--ui-arrow-top-right-inverse, </h2>
+                </li>
+             <li title="ui--ui-link-icon">
+                    <div class="icon-box">
+                        <img src="../sprite.stack.svg#ui--ui-link-icon" class="svg-ui--ui-link-icon-dims" alt="ui--ui-link-icon">
+                    </div>
+                    <h2>ui--ui-link-icon, </h2>
+                </li>
+         </ul>
+
+<!--
+====================================================================================================
+-->
+
+        </section>
+        <footer>
+            <p>Generated at Sun, 27 Apr 2025 07:05:22 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>My Blog</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+
+	<link rel="icon" type="image/x-icon" href="./img/favicons/favicon.svg">
+	<link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.webp">
+</head>
+
+<body>
+	@@include('blocks/nav.html')
+	<!-- @@include('blocks/header.html') -->
+	@@include('blocks/mobile-nav-btn.html')
+	@@include('blocks/mobile-nav.html')
+	<main class="">
+		<section>
+			<div class="container">
+				<h3 class="title-3">Кнопки</h3>
+
+                <div class="ui-block">
+                    <a class="btn" href="#!">Добавить пост</a>
+                    <a class="btn" href="#!">Вход</a>
+                    <a class="btn" href="#!">Опубликовать</a>
+                    <a class="btn" href="#!">🌘</a>
+                    <a class="btn" href="#!">☀️</a>
+                </div>
+
+				<code>
+					&lt;a class="btn" href="#!">Добавить пост&lt;/a&gt;
+				</code>
+
+				<!-- Серые (secondary btn) -->
+				<div class="ui-block mt-20">
+                    <a class="btn btn--secondary" href="#!">Редактировать</a>
+                    <a class="btn btn--secondary" href="#!">Удалить</a>
+                    <a class="btn btn--secondary" href="#!">Выбрать файл</a>
+                    <a class="btn btn--secondary" href="#!">☀️</a>
+                    <a class="btn btn--secondary" href="#!">🌘</a>
+                    <a class="btn btn--secondary" href="#!">Вход</a>
+                </div>
+				<code>
+					&lt;a class="btn btn--secondary" href="#!">Редактировать&lt;/a&gt;
+				</code>
+
+				<!-- Серые (secondary btn dark mode) -->
+				<div class="ui-block mt-20 dark">
+                    <a class="btn btn--secondary dark" href="#!">Редактировать</a>
+                    <a class="btn btn--secondary dark" href="#!">Удалить</a>
+                    <a class="btn btn--secondary dark" href="#!">Выбрать файл</a>
+                    <a class="btn btn--secondary dark" href="#!">☀️</a>
+                    <a class="btn btn--secondary dark" href="#!">Вход</a>
+                </div>
+				<code>
+					&lt;a class="btn btn--secondary dark" href="#!">Редактировать&lt;/a&gt;
+				</code>
+
+				<!-- Широкая (loadmore btn) -->
+				<div class="ui-block mt-20">
+                    <a class="btn btn--loadmore" href="#!">Загрузить еще</a>
+                </div>
+				<code>
+					&lt;a class="btn btn--loadmore" href="#!">Загрузить еще&lt;/a&gt;
+				</code>
+
+				<!-- Большие кнопки (btn-lg) -->
+				<div class="ui-block mt-20">
+                    <a class="btn btn--lg" href="#!">Обновить</a>
+                    <a class="btn btn--lg btn--secondary" href="#!">Отмена</a>
+                </div>
+				<code>
+					&lt;a class="btn btn--lg " href="#!">Обновить&lt;/a&gt;<br>
+					&lt;a class="btn btn--lg btn--secondary" href="#!">Обновить&lt;/a&gt;
+				</code>
+
+				<!-- Формы  -->
+				<h3 class="title-3">Формы</h3>
+
+				<div class="ui-block ui-block--form mt-20">
+					<label class="fieldset">
+						<span class="label" for="email">Email</span>
+						<input class="input" type="email" name="email" id="email">
+					</label>
+
+					<label class="fieldset">
+						<span class="label" for="pwd">Пароль</span>
+						<input class="input" type="password" name="pwd" id="pwd">
+					</label>
+
+					<label class="fieldset">
+						<span class="label" for="pwd">Название</span>
+						<input class="input" type="password" name="pwd" id="name">
+					</label>
+
+					<label class="fieldset">
+						<span class="label" for="pwd">Содержание</span>
+						<textarea class="textarea" name="" id=""></textarea>
+					</label>
+
+					<fieldset class="fieldset">
+						<span class="label" for="pwd">Обложка</span>
+						<label class="fieldset fieldset--checkbox">
+							<input class="input input--checkbox" type="checkbox">
+							Удалить обложку
+						</label>
+						<input class="btn btn--secondary" type="file">
+					</fieldset>
+
+                    
+                </div>
+
+				<h3 class="title-3">Пост</h3>
+				<div class="ui-block ui-block--page-bg mt-20">
+					@@include('blocks/post.html')
+				</div>
+				<code>
+					&#64;@include('blocks/post.html')<br>
+				</code>
+
+				<div class="ui-block ui-block--page-bg mt-20">
+					@@include('blocks/post-mini.html')
+					<!-- <article class="post">
+						<div class="post__date">14.03.2025</div>
+						<div class="post__text post__text--large">
+							<p>
+								Тихий плеск волны,<br> шёпот ветра в камышах —<br>время не спешит. 🌿✨
+							</p>
+						</div>
+						
+					</article> -->
+				</div>
+				<code>
+					&#64;@include('blocks/post-mini.html')<br>
+				</code>
+
+				<h3 class="title-3">Секции</h3>
+				<div class="ui-block ui-block--page-bg mt-20">
+					@@include('blocks/header.html')
+					@@include('blocks/footer.html')
+				</div>
+				<code>
+					&#64;@include('blocks/header.html')<br>
+					&#64;@include('blocks/footer.html')
+				</code>
+				
+			</div>
+		</section>
+	</main>
+
+	<script src="./js/index.bundle.js"></script>
+    <!-- <script src="./../js/main.min.js"></script> -->
+</body>
+
+</html>

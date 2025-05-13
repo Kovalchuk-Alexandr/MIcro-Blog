@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>My Blog</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+
+	<link rel="icon" type="image/x-icon" href="./img/favicons/favicon.svg">
+	<link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.webp">
+</head>
+
+<body>
+	 <nav class="nav">
+    <div class="container">
+        <div class="nav__row">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#!" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="#!" class="nav__link">About</a></li>
+                <li class="nav__item"><a href="#!" class="nav__link">Services</a></li>
+                <li class="nav__item"><a href="#!" class="nav__link">Contact</a></li>
+            </ul>
+            <a href="#!" class="nav__logo">
+                <img class="no-picture" src="./img/logo.svg" alt="Logo">
+            </a>
+
+            <div class="nav__btn-set">
+                <button class="nav__btn ">
+                    <a href="#!" class="btn">Book</a>
+                </button>
+
+                <!-- Mobile button open -->
+                <!-- <button class="mobile-nav-btn">
+                    <div class="mobile-nav-btn__icon"> -->
+                        <!-- Если используются разные кнопки для откр/закр -->
+                        <!-- <img class="nav-img" src="./img/ui/menu_right.svg" alt="Menu button" > -->
+                    <!-- </div>
+                </button> -->
+            </div>
+        </div>
+    </div>
+</nav>
+	
+	<!-- Mobile button open -->
+<button class="mobile-nav-btn">
+	<div class="mobile-nav-btn__icon">
+		<!-- Если используются разные кнопки для откр/закр -->
+		<!-- <img class="nav-img" src="./img/ui/menu_right.svg" alt="Menu button" > -->
+	</div>
+</button>
+	<!-- ======= Мобильная навигация  ============================ -->
+<div class="mobile-nav ">
+	<div class="nav__btn-set">
+		<a class="btn " href="create-post.html">Добавить пост</a>
+		<a class="btn " href="login.html">Вход</a>
+		<a class="btn toggleDarkModeBtn" href="#!">🌘</a>
+	</div>
+	
+</div>
+
+<!-- ======= Fade для мобильной навигации  =================== -->
+<div class="mobile-nav-fade"></div>
+	<main class="">
+		<section>
+			<div class="container">
+				<h3 class="title-3">Кнопки</h3>
+
+                <div class="ui-block">
+                    <a class="btn" href="#!">Добавить пост</a>
+                    <a class="btn" href="#!">Вход</a>
+                    <a class="btn" href="#!">Опубликовать</a>
+                    <a class="btn" href="#!">🌘</a>
+                    <a class="btn" href="#!">☀️</a>
+                </div>
+
+				<code>
+					&lt;a class="btn" href="#!">Добавить пост&lt;/a&gt;
+				</code>
+
+				<!-- Серые (secondary btn) -->
+				<div class="ui-block mt-20">
+                    <a class="btn btn--secondary" href="#!">Редактировать</a>
+                    <a class="btn btn--secondary" href="#!">Удалить</a>
+                    <a class="btn btn--secondary" href="#!">Выбрать файл</a>
+                    <a class="btn btn--secondary" href="#!">☀️</a>
+                    <a class="btn btn--secondary" href="#!">🌘</a>
+                    <a class="btn btn--secondary" href="#!">Вход</a>
+                </div>
+				<code>
+					&lt;a class="btn btn--secondary" href="#!">Редактировать&lt;/a&gt;
+				</code>
+
+				<!-- Серые (secondary btn dark mode) -->
+				<div class="ui-block mt-20 dark">
+                    <a class="btn btn--secondary dark" href="#!">Редактировать</a>
+                    <a class="btn btn--secondary dark" href="#!">Удалить</a>
+                    <a class="btn btn--secondary dark" href="#!">Выбрать файл</a>
+                    <a class="btn btn--secondary dark" href="#!">☀️</a>
+                    <a class="btn btn--secondary dark" href="#!">Вход</a>
+                </div>
+				<code>
+					&lt;a class="btn btn--secondary dark" href="#!">Редактировать&lt;/a&gt;
+				</code>
+
+				<!-- Широкая (loadmore btn) -->
+				<div class="ui-block mt-20">
+                    <a class="btn btn--loadmore" href="#!">Загрузить еще</a>
+                </div>
+				<code>
+					&lt;a class="btn btn--loadmore" href="#!">Загрузить еще&lt;/a&gt;
+				</code>
+
+				<!-- Большие кнопки (btn-lg) -->
+				<div class="ui-block mt-20">
+                    <a class="btn btn--lg" href="#!">Обновить</a>
+                    <a class="btn btn--lg btn--secondary" href="#!">Отмена</a>
+                </div>
+				<code>
+					&lt;a class="btn btn--lg " href="#!">Обновить&lt;/a&gt;<br>
+					&lt;a class="btn btn--lg btn--secondary" href="#!">Обновить&lt;/a&gt;
+				</code>
+
+				<!-- Формы  -->
+				<h3 class="title-3">Формы</h3>
+
+				<div class="ui-block ui-block--form mt-20">
+					<label class="fieldset">
+						<span class="label" for="email">Email</span>
+						<input class="input" type="email" name="email" id="email">
+					</label>
+
+					<label class="fieldset">
+						<span class="label" for="pwd">Пароль</span>
+						<input class="input" type="password" name="pwd" id="pwd">
+					</label>
+
+					<label class="fieldset">
+						<span class="label" for="pwd">Название</span>
+						<input class="input" type="password" name="pwd" id="name">
+					</label>
+
+					<label class="fieldset">
+						<span class="label" for="pwd">Содержание</span>
+						<textarea class="textarea" name="" id=""></textarea>
+					</label>
+
+					<fieldset class="fieldset">
+						<span class="label" for="pwd">Обложка</span>
+						<label class="fieldset fieldset--checkbox">
+							<input class="input input--checkbox" type="checkbox">
+							Удалить обложку
+						</label>
+						<input class="btn btn--secondary" type="file">
+					</fieldset>
+
+                    
+                </div>
+
+				<h3 class="title-3">Пост</h3>
+				<div class="ui-block ui-block--page-bg mt-20">
+					<article class="post">
+    <div class="post__date">16.03.2025</div>
+    <h2 class="post__title">Сила, заключённая в металле</h2>
+    <div class="post__img-wrapper">
+        <img class="post__img no-picture" src="./img/pictures/img1.jpg" alt="Post image">
+    </div>
+    <div class="post__text">
+        <p>
+            Некоторые автомобили созданы не просто для передвижения — они олицетворяют мощь, свободу и стиль. Этот мускулистый Dodge Challenger в бирюзовом цвете — настоящий символ американской автомобильной культуры. Его агрессивный силуэт, заниженная посадка и черные диски говорят сами за себя: это машина, которая требует дороги.
+        </p>
+    </div>
+    <div class="post__readmore">
+        <a class="link" href="post.html">Читать далее</a>
+    </div>
+    <div class="post__buttons">
+        <a class="btn btn--secondary" href="edit-post.html">Редактировать</a>
+        <a class="btn btn--secondary" href="delete-post.html">Удалить</a>
+    </div>
+</article>
+				</div>
+				<code>
+					&#64;@include('blocks/post.html')<br>
+				</code>
+
+				<div class="ui-block ui-block--page-bg mt-20">
+					<article class="post">
+    <div class="post__date">14.03.2025</div>
+    <div class="post__text post__text--lg">
+        <p>
+            Тихий плеск волны,<br> шёпот ветра в камышах —<br>время не спешит. 🌿✨
+        </p>
+    </div>
+    <div class="post__buttons">
+        <a class="btn btn--secondary" href="edit-post.html">Редактировать</a>
+        <a class="btn btn--secondary" href="delete-post.html">Удалить</a>
+    </div>
+    
+</article>
+					<!-- <article class="post">
+						<div class="post__date">14.03.2025</div>
+						<div class="post__text post__text--large">
+							<p>
+								Тихий плеск волны,<br> шёпот ветра в камышах —<br>время не спешит. 🌿✨
+							</p>
+						</div>
+						
+					</article> -->
+				</div>
+				<code>
+					&#64;@include('blocks/post-mini.html')<br>
+				</code>
+
+				<h3 class="title-3">Секции</h3>
+				<div class="ui-block ui-block--page-bg mt-20">
+					<header class="header">
+    <div class="container">
+        <div class="header__row">
+            <div class="header__logo">
+                <a class="logo__link" href="./../index.html">MY BLOG</a>
+            </div>
+
+            <div class="header__btns">
+                <a class="btn " href="create-post.html">Добавить пост</a>
+                <a class="btn " href="login.html">Вход</a>
+                <a class="btn toggleDarkModeBtn" href="#!">🌘</a>
+            </div>
+
+            <!-- Mobile button open -->
+<button class="mobile-nav-btn">
+	<div class="mobile-nav-btn__icon">
+		<!-- Если используются разные кнопки для откр/закр -->
+		<!-- <img class="nav-img" src="./img/ui/menu_right.svg" alt="Menu button" > -->
+	</div>
+</button>
+        </div>
+    </div>
+</header>
+					<footer class="footer">
+	<div class="container">
+		<div class="footer__copyright">© 2025 ВебКадеми</div>
+	</div>
+</footer>
+				</div>
+				<code>
+					&#64;@include('blocks/header.html')<br>
+					&#64;@include('blocks/footer.html')
+				</code>
+				
+			</div>
+		</section>
+	</main>
+
+	<script src="./js/index.bundle.js"></script>
+    <!-- <script src="./js/main.min.js"></script> -->
+</body>
+
+</html>
